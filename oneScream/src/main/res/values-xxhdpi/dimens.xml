@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <dimen name="faq_header">13sp</dimen>
+               <dimen name="faq_content">11sp</dimen>
+      <dimen name="faq_title">24sp</dimen>
+           <dimen name="detected_counter_size">101sp</dimen>
+    <dimen name="tap">12sp</dimen>
+    <dimen name="textsize">13sp</dimen>
+    <dimen name="indicator_margin_bottom">20dp</dimen>
+    <dimen name="indicator_margin_top">20dp</dimen>
+    <dimen name="ready_ed_mgntop">12dp</dimen>
+    <dimen name="ready_txt1_size">10sp</dimen>
+    <dimen name="ready_txt2_size">9sp</dimen>
+</resources>

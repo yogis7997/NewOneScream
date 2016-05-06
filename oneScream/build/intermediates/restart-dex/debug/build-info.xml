@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="22"
+    density="xxhdpi"
+    format="7"
+    timestamp="2757329614901" >
+
+    <task
+        name="javac"
+        duration="3909" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="2128" />
+    <task
+        name="verifier"
+        duration="277" />
+
+    <artifact
+        location="/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/build/outputs/apk/oneScream-debug.apk"
+        type="MAIN" />
+
+    <build timestamp="2757329614901" >
+        <artifact
+            location="/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/build/outputs/apk/oneScream-debug.apk"
+            type="MAIN" />
+    </build>
+
+</instant-run>
