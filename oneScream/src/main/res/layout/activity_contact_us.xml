@@ -33,7 +33,7 @@
                 android:layout_centerInParent="true"
                 android:text="@string/contactus_title"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/faq_title"
+                android:textSize="@dimen/faq_header"
                 android:id="@+id/title"
                 android:textStyle="normal" />
         </RelativeLayout>
@@ -60,7 +60,7 @@
                 android:id="@+id/txt1"
                 android:text="@string/contactus_text1"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/txt_content" />
+                android:textSize="@dimen/textsize" />
 
          <LinearLayout
              android:layout_width="wrap_content"
@@ -76,7 +76,7 @@
                  android:textColor="@android:color/black"
                 android:text="@string/contactus_text2"
 
-                 android:textSize="@dimen/txt_content" />
+                 android:textSize="@dimen/textsize" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
                 android:text="@string/contactus_text3"
                 android:textColor="#626c77"
                 android:background="@drawable/xml_button_trans_rect_bg_selector"
-                android:textSize="@dimen/txt_content" />
+                android:textSize="@dimen/textsize" />
          </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

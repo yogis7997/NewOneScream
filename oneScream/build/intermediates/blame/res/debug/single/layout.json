@@ -12,12 +12,12 @@
         "source": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/src/main/res/layout/activity_tour.xml"
     },
     {
-        "merged": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/build/intermediates/res/merged/debug/layout/list_item_wifi_item.xml",
-        "source": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/src/main/res/layout/list_item_wifi_item.xml"
-    },
-    {
         "merged": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/build/intermediates/res/merged/debug/layout/activity_thankyou.xml",
         "source": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/src/main/res/layout/activity_thankyou.xml"
+    },
+    {
+        "merged": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/build/intermediates/res/merged/debug/layout/list_item_wifi_item.xml",
+        "source": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/src/main/res/layout/list_item_wifi_item.xml"
     },
     {
         "merged": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/build/intermediates/res/merged/debug/layout/activity_reset_password.xml",
@@ -170,6 +170,10 @@
     {
         "merged": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/build/intermediates/res/merged/debug/layout/activity_splash.xml",
         "source": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/src/main/res/layout/activity_splash.xml"
+    },
+    {
+        "merged": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/build/intermediates/res/merged/debug/layout/dummy_login.xml",
+        "source": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/src/main/res/layout/dummy_login.xml"
     },
     {
         "merged": "/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/build/intermediates/res/merged/debug/layout/activity_address_one.xml",

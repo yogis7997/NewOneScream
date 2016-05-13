@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.onescream.HomeActivity;
 import com.onescream.R;
+import com.onescream.Utils.Utility;
 import com.onescream.settings.PrivacyPolicyActivity;
 import com.onescream.settings.TermsActivity;
 import com.uc.prjcmn.ActivityTask;
@@ -23,6 +26,8 @@ public class ThankyouActivity extends Activity implements View.OnClickListener {
 	private final String TAG = "ThankyouActivity";
 
 	private Context mContext;
+	private RelativeLayout rl_main;
+	private Utility utility;
 
 	// ////////////////////////////////////////////////////////////
 	// //////////////////////////////////////////////////////////////
@@ -31,7 +36,7 @@ public class ThankyouActivity extends Activity implements View.OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_thankyou);
 		ActivityTask.INSTANCE.add(this);
-
+utility = new Utility(this);
 		mContext = (Context) this;
 
 		updateLCD();
@@ -67,7 +72,15 @@ public class ThankyouActivity extends Activity implements View.OnClickListener {
 
 		// /> SubScribe
 		findViewById(R.id.frm_btn_subscribe).setOnClickListener(this);
+		rl_main = (RelativeLayout) findViewById(R.id.rl_main);
+		TextView text1 = (TextView)findViewById(R.id.text1);
+		TextView text2= (TextView)findViewById(R.id.text2);
 
+		if (utility.getScreenSize()) {
+			rl_main.getLayoutParams().height = getResources().getInteger(R.integer.rl_main_height);
+			text1.setTextSize(getResources().getInteger(R.integer.text_size));
+			text2.setTextSize(getResources().getInteger(R.integer.text_size));
+		}
 		//findViewById(R.id.iv_page6).setSelected(true);
 	}
 

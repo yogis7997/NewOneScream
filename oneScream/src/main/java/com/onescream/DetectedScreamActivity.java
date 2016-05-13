@@ -178,13 +178,14 @@ public class DetectedScreamActivity extends Activity implements
     protected void onStop() {
         super.onStop();
         startService(new Intent(DetectedScreamActivity.this, OneScreamService.class));
+
     }
 
     @Override
     protected void onDestroy() {
 
         m_bGettingAddress = false;
-
+        releaseCamera();
         releaseValues();
 
         if (m_bRinging)
@@ -209,6 +210,14 @@ public class DetectedScreamActivity extends Activity implements
         Intent intent = new Intent(this, PlayAudio.class);
         stopService(intent);
         super.onDestroy();
+    }
+
+    private void releaseCamera() {
+        if (mCamera != null) {
+            mCamera.stopPreview();
+            mCamera.release();
+            mCamera = null;
+        }
     }
 
     private void releaseValues() {
@@ -431,6 +440,7 @@ public class DetectedScreamActivity extends Activity implements
         if (GlobalValues.sharedInstance().m_bNotifyFlash) {
             if (mCamera == null) {
                 try {
+
                     mCamera = Camera.open();
                 } catch (Exception e) {
                     e.printStackTrace();

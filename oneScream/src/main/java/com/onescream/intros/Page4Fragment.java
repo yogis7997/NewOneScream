@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.onescream.R;
@@ -26,6 +27,7 @@ public final class Page4Fragment extends Fragment implements OnClickListener {
 
 	boolean getValue = false;
 	private Utility utility;
+	private RelativeLayout rl_main;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,15 @@ public final class Page4Fragment extends Fragment implements OnClickListener {
 		if (getValue) {
 			Indicator6.setVisibility(View.GONE);
 			Indicator5.setVisibility(View.GONE);
+		}
+
+
+		rl_main = (RelativeLayout) v.findViewById(R.id.rl_main);
+
+		if (utility.getScreenSize()) {
+			rl_main.getLayoutParams().height = getResources().getInteger(R.integer.rl_main_height);
+			Text1.setTextSize(getResources().getInteger(R.integer.text_size));
+			Text2.setTextSize(getResources().getInteger(R.integer.text_size));
 		}
 //		TextView labelTitle = (TextView) v.findViewById(R.id.labelll); 
 //		 labelTitle.setTypeface(EstiloRegular);

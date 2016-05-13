@@ -6,6 +6,7 @@
     android:orientation="vertical" >
 
     <RelativeLayout
+        android:id="@+id/rl_main"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sky_height"
         >
@@ -29,7 +30,7 @@
             <ImageView
                 android:id="@+id/labelll"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp"
+                android:layout_height="@dimen/logo_size"
                 android:layout_centerInParent="true"
                 android:src="@drawable/one_screem"
                 />
@@ -52,7 +53,7 @@
                 android:id="@+id/title"
 
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/faq_title"
+                android:textAppearance="?android:textAppearanceLarge"
                 />
 
             <ImageView
@@ -136,7 +137,7 @@
         </LinearLayout>
 
         <ScrollView android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"
             >

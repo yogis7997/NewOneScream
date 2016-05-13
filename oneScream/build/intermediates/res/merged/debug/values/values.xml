@@ -88,6 +88,7 @@
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
+    <color name="line_color">#e0e0e0</color>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
@@ -262,11 +263,13 @@
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="button_font_size">13sp</dimen>
+    <dimen name="addresses_sv_mt">20dp</dimen>
+    <dimen name="button_font_size">11sp</dimen>
     <dimen name="button_font_size_cancel">18sp</dimen>
     <dimen name="button_height">40dp</dimen>
     <dimen name="button_height_cancel">75dp</dimen>
     <dimen name="button_height_extra">60dp</dimen>
+    <dimen name="circle_size">300dp</dimen>
     <dimen name="default_circle_indicator_radius">3dp</dimen>
     <dimen name="default_circle_indicator_stroke_width">1dp</dimen>
     <dimen name="default_line_indicator_gap_width">4dp</dimen>
@@ -280,6 +283,11 @@
     <dimen name="default_title_indicator_text_size">15dp</dimen>
     <dimen name="default_title_indicator_title_padding">5dp</dimen>
     <dimen name="default_title_indicator_top_padding">7dp</dimen>
+    <dimen name="detail_name_mt">10dp</dimen>
+    <dimen name="detail_pi_mrgntop">15dp</dimen>
+    <dimen name="detail_pi_ts">16sp</dimen>
+    <dimen name="detail_protection_plan_mt">15dp</dimen>
+    <dimen name="detail_topbarheight">60dp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
@@ -287,6 +295,10 @@
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
     <dimen name="indicator_margin_bottom">20dp</dimen>
     <dimen name="indicator_margin_top">20dp</dimen>
+    <dimen name="lay2_home_mrgntop">35dp</dimen>
+    <dimen name="lay_home_mrgntop">30dp</dimen>
+    <dimen name="line_mt">20dp</dimen>
+    <dimen name="logo_size">20dp</dimen>
     <dimen name="mr_media_route_controller_art_max_height">320dp</dimen>
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
@@ -301,10 +313,17 @@
     <dimen name="place_autocomplete_progress_horizontal_margin">16dp</dimen>
     <dimen name="place_autocomplete_progress_size">24dp</dimen>
     <dimen name="place_autocomplete_separator_start">72dp</dimen>
+    <dimen name="pp_mt">30dp</dimen>
     <dimen name="ready_ed_mgntop">12dp</dimen>
     <dimen name="ready_txt1_size">10sp</dimen>
     <dimen name="ready_txt2_size">9sp</dimen>
+    <dimen name="sidebar_txtsize">18sp</dimen>
+    <dimen name="small_textsize">11sp</dimen>
     <dimen name="textsize">13sp</dimen>
+    <dimen name="textsize_swipe">11sp</dimen>
+    <dimen name="tp_mt">12dp</dimen>
+    <dimen name="txt_home_title">23sp</dimen>
+    <dimen name="your_address_mt">33dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
@@ -334,7 +353,14 @@
     <integer name="default_underline_indicator_fade_delay">300</integer>
     <integer name="default_underline_indicator_fade_length">400</integer>
     <integer name="google_play_services_version">8487000</integer>
+    <integer name="margin_top">5</integer>
+    <integer name="rl_main_height">280</integer>
+    <integer name="sidebar_text_size">13</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <integer name="text_size">12</integer>
+    <integer name="text_size_large">14</integer>
+    <integer name="text_size_medium">9</integer>
+    <integer name="text_size_short">9</integer>
     <string name="FAQ">FAQ\'s</string>
     <string name="GPSAlertDialogMessage">Please enable GPS/network in settings</string>
     <string name="GPSAlertDialogTitle">GPS Error</string>
@@ -448,7 +474,7 @@ force for good for others!
     <string name="intro_text1">We will hear you when you need us most</string>
     <string name="intro_text2">We hope you\'ll never need One Scream. \n\nBut if you are in danger and can not phone for help, we will hear your scream and send an automated message to 999, telling them who you are and where to find you.</string>
     <string name="intro_text2_1">One Scream has been scientifically developed to only respond to genuine panic screams. Just as your own ear hears real distress, our app can distinguish a true panic scream from other screams and sounds.</string>
-    <string name="intro_text3">Download the app and keep it running in the background. \n\nIf we hear your scream two times, we know you are in real danger and activates an alarm and calls the 999 on your behalf. \n\nAfter the police hear your a recording of your scream, they have an open line to your phone. \n\nWe do not listen for or record spoken words, we only ever record panic screams.</string>
+    <string name="intro_text3">Download the app and keep it running in the background. \n\nIf we hear your scream two times, we know you are in real danger and activates an alarm and calls the 999 on your behalf. \n\nAfter the police hear a recording of your scream, they have an open line to your phone. \n\nWe do not listen for or record spoken words, we only ever record panic screams.</string>
     <string name="intro_text4">Your phone is switched off \n\nYou are on a call \n\nYou are at a concert or riding a roller coaster \n\nYou are using other voice-activated apps </string>
     <string name="intro_text5_1">One Scream can not hear you if your phone is powered off or when you are on the phone.</string>
     <string name="intro_text5_2">One Scream can hear you if your phone is in your ba or less than 5 meters away from you.</string>
@@ -456,7 +482,7 @@ force for good for others!
     <string name="intro_text5_4">If our app activates a call to Police on your behalf, the Police will hear the recorded scream and they will have an open line to hear you.</string>
     <string name="intro_text_swipe">SWIPE TO CONTINUE</string>
     <string name="intro_title2">Introduction to One Scream</string>
-    <string name="intro_title3">How One Scream Works</string>
+    <string name="intro_title3">How One Scream works</string>
     <string name="intro_title4">When we can not hear you</string>
     <string name="intro_title4n">\nThe good news is One Scream can hear you from a distance, and you will still be protected if your phone is buried in your bag.</string>
     <string name="intro_title5">We think you should know:</string>
@@ -469,7 +495,7 @@ force for good for others!
     <string name="listening">Listening</string>
     <string name="login_btn">Submit</string>
     <string name="login_fb_btn">Facebook Login</string>
-    <string name="login_signup_btn">Create One Now</string>
+    <string name="login_signup_btn">Create one now</string>
     <string name="login_text1">Your address helps us keep you safe. GPS and WIFI work together to communicate to Police where you are.</string>
     <string name="login_text2">Don\'t have an account?</string>
     <string name="login_title1">Ready?</string>
@@ -527,7 +553,7 @@ force for good for others!
     <string name="signup_postcode">Postcode</string>
     <string name="signup_pwd_confirm">Re-enter password</string>
     <string name="signup_text1">Ready?</string>
-    <string name="signup_text2">Start your Free 14 days trial</string>
+    <string name="signup_text2">Start your Free 14 day trial</string>
     <string name="signup_text3">By tapping to \"Create Account\", you are indicating that you have read</string>
     <string name="signup_text4">the</string>
     <string name="signup_text5">Privacy Policy</string>
@@ -583,7 +609,7 @@ force for good for others!
     <string name="word_signup">Register</string>
     <string name="word_submit">Submit</string>
     <string name="word_yes">Yes</string>
-    <string name="yourdetails_Add_frequent">+ Add Frequented Address</string>
+    <string name="yourdetails_Add_frequent">+ Add Other Address</string>
     <string name="yourdetails_Add_home">+ Add Home Address</string>
     <string name="yourdetails_Add_work">+ Add Work Address</string>
     <string name="yourdetails_address">Address</string>
@@ -615,6 +641,7 @@ force for good for others!
 
 
         -->
+        <item name="android:windowActionBarOverlay">true</item>
     </style>
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->

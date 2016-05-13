@@ -28,7 +28,9 @@ import android.os.Message;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -86,7 +88,7 @@ public class HomeActivity extends Activity implements View.OnClickListener {
     /**
      * For Left Menu
      */
-    private MenuDrawer mDrawer;
+    public static MenuDrawer mDrawer;
 
     private Context mContext;
 
@@ -109,6 +111,8 @@ public class HomeActivity extends Activity implements View.OnClickListener {
     private Utility utility;
     Typeface facethin, facebold, faceRegular, EstiloRegular, sanfaceRegular, sanfacesemibold;
     private NotificationManager notiManager;
+    private int height, width;
+    int size;
 
     // ////////////////////////////////////////////////////////////
     // //////////////////////////////////////////////////////////////
@@ -183,6 +187,11 @@ public class HomeActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onResume() {
         updateUIForDetectState();
+//        if (GlobalValues.sharedInstance().m_bDetecting) {
+//            startService(new Intent(HomeActivity.this, OneScreamService.class));
+//        } else {
+//            stopService(new Intent(HomeActivity.this, OneScreamService.class));
+//        }
         stopService(new Intent(HomeActivity.this, PlayAudio.class));
         super.onResume();
 
@@ -193,6 +202,8 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         if (!m_bWiFiPopuped) {
             checkCurrentWIFIAndAsk();
         }
+
+
     }
 
     private void checkCurrentWIFIAndAsk() {
@@ -333,7 +344,8 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         // Detect Status control
         m_ivDetectStatus = (ImageView) findViewById(R.id.iv_detect_status);
         m_ivDetectStatus1 = (ImageView) findViewById(R.id.iv_detect_status1);
-
+        m_ivDetectStatus1.setVisibility(View.VISIBLE);
+        m_ivDetectStatus.setVisibility(View.VISIBLE);
         // Detect Button
         m_ivDetectBtn = (ImageView) findViewById(R.id.iv_detect_btn);
         m_ivDetectBtn.setOnClickListener(this);
@@ -341,7 +353,23 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         //	screen_title.setTypeface(EstiloRegular);
         m_tvDetectStatus.setTypeface(sanfacesemibold);
         m_tvTitle.setTypeface(sanfaceRegular);
-
+        LinearLayout ll_main = (LinearLayout) findViewById(R.id.ll_main);
+        RelativeLayout frm_header = (RelativeLayout) findViewById(R.id.frm_sub_header);
+        if (utility.getScreenSize()) {
+            m_ivDetectBtn.setImageResource(R.drawable.ic_play);
+            m_ivDetectStatus.setImageResource(R.drawable.ic_planet);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            Log.e(TAG, " dp== " + utility.convertPixelsToDp(getResources().getInteger(R.integer.margin_top), this));
+            params.topMargin = utility.convertPixelsToDp(20, this);
+            ll_main.setLayoutParams(params);
+            frm_header.setLayoutParams(params);
+//            m_tvTitle.setTextSize(getResources().getInteger(R.integer.text_size_large));
+//            m_tvDetectStatus.setTextSize(getResources().getInteger(R.integer.text_size));
+            m_ivDetectStatus1.getLayoutParams().width = 400;
+            m_ivDetectStatus1.getLayoutParams().height = 400;
+            m_ivDetectStatus.getLayoutParams().width = 340;
+            m_ivDetectStatus.getLayoutParams().height = 340;
+        }
 
     }
 
@@ -361,6 +389,7 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         menui4 = (ImageView) findViewById(R.id.menui4);
         menui5 = (ImageView) findViewById(R.id.menui5);
         menui6 = (ImageView) findViewById(R.id.menui6);
+
         menui7 = (ImageView) findViewById(R.id.menui7);
 
 
@@ -388,6 +417,17 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         //tv_menu_privacy_policy.setText("P R I V A C Y  P O L I C Y");
         tv_menu_privacy_policy.setOnClickListener(this);
         tv_menu_terms.setOnClickListener(this);
+        if (utility.getScreenSize()) {
+
+            menu1.setTextSize(getResources().getInteger(R.integer.sidebar_text_size));
+            menu2.setTextSize(getResources().getInteger(R.integer.sidebar_text_size));
+            menu3.setTextSize(getResources().getInteger(R.integer.sidebar_text_size));
+            menu4.setTextSize(getResources().getInteger(R.integer.sidebar_text_size));
+            menu5.setTextSize(getResources().getInteger(R.integer.sidebar_text_size));
+            menu6.setTextSize(getResources().getInteger(R.integer.sidebar_text_size));
+            menu7.setTextSize(getResources().getInteger(R.integer.sidebar_text_size));
+
+        }
     }
 
     // /////////////////////////////////////
@@ -593,20 +633,39 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         }
     }
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+
+        height = m_ivDetectStatus1.getHeight();
+        width = m_ivDetectStatus1.getMeasuredWidth();
+        size = width;
+    }
+
     int m_nPaddingOfPlanet = 0;
 
     private void makeSmallPlanet() {
+
+        ViewTreeObserver vto = m_ivDetectStatus1.getViewTreeObserver();
+
+
+        if (utility.getScreenSize()) {
+            size = 305;
+        } else {
+            size = 305;
+        }
+        Log.e(TAG, " widhth== " + size);
         m_nPaddingOfPlanet += 3;
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) m_ivDetectStatus1.getLayoutParams();
-        params.width = (int) ((310 - m_nPaddingOfPlanet * 2) * screen_rate);
-        params.height = (int) ((310 - m_nPaddingOfPlanet * 2) * screen_rate);
+        params.width = (int) ((size - m_nPaddingOfPlanet * 2) * screen_rate);
+        params.height = (int) ((size - m_nPaddingOfPlanet * 2) * screen_rate);
         m_ivDetectStatus1.requestLayout();
 
         if (m_nPaddingOfPlanet >= 30) {
             m_ivDetectStatus1.setVisibility(View.INVISIBLE);
             params = (RelativeLayout.LayoutParams) m_ivDetectStatus1.getLayoutParams();
-            params.width = (int) (310 * screen_rate);
-            params.height = (int) (310 * screen_rate);
+            params.width = (int) (size * screen_rate);
+            params.height = (int) (size * screen_rate);
             m_ivDetectStatus1.requestLayout();
             m_nPaddingOfPlanet = 0;
         } else {
@@ -630,10 +689,30 @@ public class HomeActivity extends Activity implements View.OnClickListener {
 
             m_ivDetectBtn.setImageResource(R.drawable.ic_pause);
             // m_ivDetectStatus.setVisibility(View.VISIBLE);
+            m_ivDetectStatus.setImageResource(R.drawable.ic_planet);
             m_ivDetectStatus1.setVisibility(View.VISIBLE);
+            m_ivDetectStatus.setVisibility(View.VISIBLE);
             makeSmallPlanet();
 
         } else {
+
+//            if (utility.getScreenSizeOther()) {
+//                m_ivDetectStatus.getLayoutParams().width = 500;
+//                m_ivDetectStatus.getLayoutParams().height = 500;
+//                m_ivDetectStatus1.getLayoutParams().width = 430;
+//                m_ivDetectStatus1.getLayoutParams().height = 430;
+//            }
+            if (utility.getScreenSize()) {
+
+                m_ivDetectStatus1.getLayoutParams().width = 400;
+                m_ivDetectStatus1.getLayoutParams().height = 400;
+                m_ivDetectStatus.getLayoutParams().width = 340;
+                m_ivDetectStatus.getLayoutParams().height = 340;
+//                m_ivDetectStatus1.getLayoutParams().width = 430;
+//                m_ivDetectStatus1.getLayoutParams().height = 430;
+//                m_ivDetectStatus.getLayoutParams().width = 340;
+//                m_ivDetectStatus.getLayoutParams().height = 340;
+            }
             notiManager.cancel(33333);
             utility.RegisterScreen(this, getResources().getString(R.string.standing_by));
             m_tvTitle.setText("Standing By");

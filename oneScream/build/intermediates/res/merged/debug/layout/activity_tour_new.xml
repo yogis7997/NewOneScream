@@ -6,6 +6,7 @@
     android:orientation="vertical" >
 
     <RelativeLayout
+        android:id="@+id/rl_main"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sky_height"
         >
@@ -30,7 +31,7 @@
             <ImageView
                 android:id="@+id/labelll"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp"
+                android:layout_height="@dimen/logo_size"
                 android:layout_centerInParent="true"
                 android:src="@drawable/one_screem"
                 />
@@ -38,13 +39,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/frm_sub_header"
+            android:layout_height="wrap_content"
+
             android:layout_marginTop="15dp"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp" >
+            android:layout_alignParentBottom="true"
+            android:padding="30dp"
+            >
 
             <TextView
                 android:layout_width="match_parent"
@@ -153,16 +155,16 @@
                 android:text="@string/thankyou_text1"
                 android:textColor="#2f3942"
                 android:id="@+id/text1"
-                android:textSize="13sp" />
+                android:textSize="@dimen/textsize" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:text="@string/thankyou_text2"
                 android:textColor="#2f3942"
                 android:id="@+id/text2"
-                android:textSize="13sp" />
+                android:textSize="@dimen/textsize" />
         </LinearLayout>
 
         <LinearLayout
@@ -179,6 +181,7 @@
                 android:layout_height="@dimen/button_height"
                 android:layout_alignParentBottom="true"
                 android:layout_weight="1"
+
                 android:background="#344251" >
 
                 <TextView
@@ -201,6 +204,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
+                android:visibility="gone"
                 android:background="@drawable/xml_button_rect" >
 
                 <TextView

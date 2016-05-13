@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.onescream.R;
@@ -143,6 +144,15 @@ public class AddressFragment extends Activity implements View.OnClickListener {
         tv_save.setTypeface(facebold);
         findViewById(R.id.frm_btn_save).setOnClickListener(this);
 
+        RelativeLayout rl_main = (RelativeLayout) findViewById(R.id.rl_main);
+
+
+        if (utility.getScreenSize()) {
+            rl_main.getLayoutParams().height = getResources().getInteger(R.integer.rl_main_height);
+            home_addres.setTextSize(getResources().getInteger(R.integer.text_size));
+            work_addres.setTextSize(getResources().getInteger(R.integer.text_size));
+            frequent_addres.setTextSize(getResources().getInteger(R.integer.text_size));
+        }
     }
     private void initTypeFace()
     {

@@ -68,7 +68,7 @@
                 android:id="@+id/text"
                 android:text="@string/intro_text1"
                 android:textColor="#6b8096"
-                android:textSize="@dimen/textsize" />
+                android:textSize="@dimen/small_textsize" />
         </LinearLayout>
 
         <LinearLayout

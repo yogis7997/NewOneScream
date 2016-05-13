@@ -6,6 +6,7 @@
     android:orientation="vertical" >
 
     <RelativeLayout
+        android:id="@+id/rl_main"
         android:layout_width="match_parent"
         android:layout_height="@dimen/sky_height"
         >
@@ -29,7 +30,7 @@
             <ImageView
                 android:id="@+id/labelll"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp"
+                android:layout_height="@dimen/logo_size"
                 android:layout_centerInParent="true"
                 android:src="@drawable/one_screem"
                 />
@@ -51,7 +52,7 @@
                 android:text="@string/thankyou_title1"
                 android:textColor="@android:color/white"
                 android:id="@+id/title"
-                android:textSize="21dp"
+                android:textAppearance="?android:textAppearanceLarge"
                 />
 
             <ImageView

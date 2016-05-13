@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.onescream.HomeActivity;
@@ -62,6 +63,16 @@ public class TourLastActivity extends Activity implements View.OnClickListener {
         if(getValue){
             Indicator6.setVisibility(View.GONE);
             Indicator5.setVisibility(View.GONE);
+        }
+
+
+        RelativeLayout rl_main = (RelativeLayout) findViewById(R.id.rl_main);
+       
+
+        if (utility.getScreenSize()) {
+            rl_main.getLayoutParams().height = getResources().getInteger(R.integer.rl_main_height);
+            text1.setTextSize(getResources().getInteger(R.integer.text_size));
+            text2.setTextSize(getResources().getInteger(R.integer.text_size));
         }
         //findViewById(R.id.iv_page6).setSelected(true);
 //		m_tvContents = (TextView) v.findViewById(R.id.tv_contents);

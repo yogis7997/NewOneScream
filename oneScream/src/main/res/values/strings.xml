@@ -38,8 +38,8 @@
     <string name="intro_text2">We hope you\'ll never need One Scream. \n\nBut if you are in danger and can not phone for help, we will hear your scream and send an automated message to 999, telling them who you are and where to find you.</string>
     <string name="intro_text2_1">One Scream has been scientifically developed to only respond to genuine panic screams. Just as your own ear hears real distress, our app can distinguish a true panic scream from other screams and sounds.</string>
     <string name="intro_text_swipe">SWIPE TO CONTINUE</string>
-    <string name="intro_title3">How One Scream Works</string>
-    <string name="intro_text3">Download the app and keep it running in the background. \n\nIf we hear your scream two times, we know you are in real danger and activates an alarm and calls the 999 on your behalf. \n\nAfter the police hear your a recording of your scream, they have an open line to your phone. \n\nWe do not listen for or record spoken words, we only ever record panic screams.</string>
+    <string name="intro_title3">How One Scream works</string>
+    <string name="intro_text3">Download the app and keep it running in the background. \n\nIf we hear your scream two times, we know you are in real danger and activates an alarm and calls the 999 on your behalf. \n\nAfter the police hear a recording of your scream, they have an open line to your phone. \n\nWe do not listen for or record spoken words, we only ever record panic screams.</string>
     <string name="intro_title4">When we can not hear you</string>
     <string name="intro_text4">Your phone is switched off \n\nYou are on a call \n\nYou are at a concert or riding a roller coaster \n\nYou are using other voice-activated apps </string>
     <string name="intro_title4n">\nThe good news is One Scream can hear you from a distance, and you will still be protected if your phone is buried in your bag.</string>
@@ -61,7 +61,7 @@
     <string name="signup_password">Password</string>
     <string name="signup_pwd_confirm">Re-enter password</string>
     <string name="signup_text1">Ready?</string>
-    <string name="signup_text2">Start your Free 14 days trial</string>
+    <string name="signup_text2">Start your Free 14 day trial</string>
     <string name="signup_text3">By tapping to \"Create Account\", you are indicating that you have read</string>
     <string name="signup_text4">the</string>
     <string name="signup_text5">Privacy Policy</string>
@@ -79,7 +79,7 @@
     <string name="reset_text2">Forgot your login details?</string>
     <string name="reset_text">Reset password</string>
 
-    <string name="login_signup_btn">Create One Now</string>
+    <string name="login_signup_btn">Create one now</string>
 
     <!-- License Screen -->
     <string name="license_text1">You can feel safer now. By signing up you agree to our terms and conditions.</string>
@@ -137,7 +137,7 @@
     <string name="yourdetails_em">Email</string>
     <string name="yourdetails_Add_home">+ Add Home Address</string>
     <string name="yourdetails_Add_work">+ Add Work Address</string>
-    <string name="yourdetails_Add_frequent">+ Add Frequented Address</string>
+    <string name="yourdetails_Add_frequent">+ Add Other Address</string>
 
 
     <!-- Upgrade Membership -->

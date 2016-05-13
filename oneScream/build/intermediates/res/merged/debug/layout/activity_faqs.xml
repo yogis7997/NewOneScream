@@ -49,7 +49,7 @@
                         android:layout_height="wrap_content"
                          android:text="@string/faqs_title"
                         android:textColor="#20262e"
-                        android:textSize="@dimen/faq_title"
+                        android:textSize="@dimen/faq_header"
                        android:layout_centerInParent="true"
                         
                           />

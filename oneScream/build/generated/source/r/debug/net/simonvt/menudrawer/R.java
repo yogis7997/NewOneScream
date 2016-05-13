@@ -27,7 +27,7 @@ public final class R {
 		public static final int menuDrawerStyle = 0x7f01000c;
 	}
 	public static final class color {
-		public static final int md__defaultBackground = 0x7f0b0046;
+		public static final int md__defaultBackground = 0x7f0b0047;
 	}
 	public static final class id {
 		public static final int bottom = 0x7f0c002b;

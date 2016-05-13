@@ -5,9 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,9 +30,8 @@ import com.uc.prjcmn.SharedPreferencesMgr;
 
 /**
  * Activity class for Your Details Screen
- *
+ * <p>
  * Created by Anwar Almojarkesh
- *
  */
 
 public class YourDetailsActivity extends Activity implements View.OnClickListener {
@@ -45,7 +46,8 @@ public class YourDetailsActivity extends Activity implements View.OnClickListene
 
     private TextView m_tvUpgradePlan;
     private TextView m_tvRemainedDays;
-    Typeface facethin,facebold,faceRegular,EstiloRegular,faceMedium;
+    private TextView tv_pi, tv_name, tv_phone, tv_email, tv_ypp, tv_your_address;
+    Typeface facethin, facebold, faceRegular, EstiloRegular, faceMedium;
     private Utility utility;
 
     // ////////////////////////////////////////////////////////////
@@ -79,6 +81,12 @@ public class YourDetailsActivity extends Activity implements View.OnClickListene
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             goBack();
@@ -86,6 +94,7 @@ public class YourDetailsActivity extends Activity implements View.OnClickListene
         }
         return super.onKeyDown(keyCode, event);
     }
+
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(YourDetailsActivity.this, HomeActivity.class);
@@ -101,7 +110,7 @@ public class YourDetailsActivity extends Activity implements View.OnClickListene
         findViewById(R.id.iv_back).setOnClickListener(this);
 
         findViewById(R.id.frm_board).setOnClickListener(this);
-        TextView title=(TextView)findViewById(R.id.title);
+        TextView title = (TextView) findViewById(R.id.title);
 
         Typeface sanfacebold = Typeface.createFromAsset(this
                         .getAssets(),
@@ -111,8 +120,15 @@ public class YourDetailsActivity extends Activity implements View.OnClickListene
         m_etName = (EditText) findViewById(R.id.et_name);
         m_etPhone = (EditText) findViewById(R.id.et_phone);
         m_etEmail = (EditText) findViewById(R.id.et_email);
+        tv_name = (TextView) findViewById(R.id.tv_name);
+        tv_pi = (TextView) findViewById(R.id.tv_pi);
+        tv_name = (TextView) findViewById(R.id.tv_name);
+        tv_phone = (TextView) findViewById(R.id.tv_phone);
+        tv_email = (TextView) findViewById(R.id.tv_email);
+        tv_ypp = (TextView) findViewById(R.id.tv_ypp);
+        tv_your_address = (TextView) findViewById(R.id.tv_your_address);
         m_etEmail.setEnabled(false);
-        
+
         ///> Update Information
         findViewById(R.id.frm_update_info).setOnClickListener(this);
 
@@ -127,13 +143,37 @@ public class YourDetailsActivity extends Activity implements View.OnClickListene
         ///> WiFi addresses
         findViewById(R.id.frm_wifi_addresses).setOnClickListener(this);
 
-        TextView managetxt=(TextView)findViewById(R.id.tv_upgrade_member);
-        TextView updtaetxt=(TextView)findViewById(R.id.tv_wifi_addresses);
+        TextView managetxt = (TextView) findViewById(R.id.tv_upgrade_member);
+        TextView updtaetxt = (TextView) findViewById(R.id.tv_wifi_addresses);
         managetxt.setTypeface(facebold);
         updtaetxt.setTypeface(facebold);
+
+        if (utility.getScreenSize()) {
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            Log.e(TAG, " dp== " + utility.convertPixelsToDp(getResources().getInteger(R.integer.margin_top), this));
+            params.topMargin = utility.convertPixelsToDp(10, this);
+            tv_name.setLayoutParams(params);
+            tv_pi.setLayoutParams(params);
+            tv_your_address.setLayoutParams(params);
+            tv_ypp.setLayoutParams(params);
+            tv_email.setLayoutParams(params);
+            tv_phone.setLayoutParams(params);
+            m_etName.setLayoutParams(params);
+            m_etEmail.setLayoutParams(params);
+            m_etPhone.setLayoutParams(params);
+            tv_pi.setTextSize(getResources().getInteger(R.integer.text_size));
+            tv_ypp.setTextSize(getResources().getInteger(R.integer.text_size));
+            tv_your_address.setTextSize(getResources().getInteger(R.integer.text_size));
+
+            tv_name.setTextSize(getResources().getInteger(R.integer.text_size));
+            tv_phone.setTextSize(getResources().getInteger(R.integer.text_size));
+            tv_email.setTextSize(getResources().getInteger(R.integer.text_size));
+        }
+
+
     }
-    private void initTypeFace()
-    {
+
+    private void initTypeFace() {
         facethin = Typeface.createFromAsset(this.getAssets(),
                 "fonts/Roboto-Thin.ttf");
         faceMedium = Typeface.createFromAsset(this.getAssets(),
@@ -147,6 +187,7 @@ public class YourDetailsActivity extends Activity implements View.OnClickListene
         EstiloRegular = Typeface.createFromAsset(this.getAssets(),
                 "fonts/EstiloRegular.otf");
     }
+
     private void refreshUI() {
         ParseUser user = ParseUser.getCurrentUser();
 
@@ -162,7 +203,7 @@ public class YourDetailsActivity extends Activity implements View.OnClickListene
         String strPayStatus = "Expired";
         long nRemainedDays = 0;
         long seconds = (date_expiry.getTime() - now.getTime()) / 1000;
-        long days = (int)(seconds / (double)(24 * 3600) + 0.5);
+        long days = (int) (seconds / (double) (24 * 3600) + 0.5);
         if (seconds >= 0) {
             if (user.getString("user_type").equals(PRJCONST.USER_TYPE_MONTH)) {
                 strPayStatus = String.format("MONTH PLAN");
@@ -183,10 +224,11 @@ public class YourDetailsActivity extends Activity implements View.OnClickListene
 
     // /////////////////////////////////////
     public void goBack() {
-            Intent intent = new Intent(YourDetailsActivity.this, HomeActivity.class);
-            startActivity(intent);
-              overridePendingTransition(R.anim.hold, R.anim.right_out);
-            finish();
+        Intent intent = new Intent(YourDetailsActivity.this, HomeActivity.class);
+        startActivity(intent);
+
+        finish();
+        overridePendingTransition(R.anim.hold, R.anim.right_out);
 
     }
 

@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.onescream.R;
@@ -37,10 +40,11 @@ import java.util.GregorianCalendar;
 
 /**
  * Fragment class for Page4 of First Screen
- * <p/>
+ * <p>
  * Created by Anwar Almojarkesh
  */
 public final class RegisterFragment extends Fragment implements View.OnClickListener {
+    private static final String TAG = "RegisterFragment";
     Typeface facethin, facebold, faceRegular, EstiloRegular, faceMedium;
     Typeface sanfacethin, sanfacebold, sanfaceRegular, sanEstiloRegular, sanfaceMedium;
     public static boolean m_bInTour;
@@ -54,6 +58,8 @@ public final class RegisterFragment extends Fragment implements View.OnClickList
     private String m_strpaswrd;
     private String m_strrepaswrd;
     private Utility utility;
+    private RelativeLayout rl_main;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -127,7 +133,28 @@ public final class RegisterFragment extends Fragment implements View.OnClickList
         TextView Terms_btn = (TextView) v.findViewById(R.id.tv_terms_service);
 
         Terms_btn.setOnClickListener(this);
+        rl_main = (RelativeLayout) v.findViewById(R.id.rl_main);
 
+        if (utility.getScreenSize()) {
+            rl_main.getLayoutParams().height = getResources().getInteger(R.integer.rl_main_height);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            Log.e(TAG, " dp== " + utility.convertPixelsToDp(getResources().getInteger(R.integer.margin_top), getActivity()));
+            params.topMargin = utility.convertPixelsToDp(5, getActivity());
+            params.gravity = Gravity.LEFT;
+            m_etPhone.setLayoutParams(params);
+            m_etEmail.setLayoutParams(params);
+            m_etpwd.setLayoutParams(params);
+            m_etRepwd.setLayoutParams(params);
+            m_etPhone.setLayoutParams(params);
+//            m_etPhone.getLayoutParams().
+            Text1.setTextSize(getResources().getInteger(R.integer.text_size_short));
+            Text2.setTextSize(getResources().getInteger(R.integer.text_size_short));
+            Text3.setTextSize(getResources().getInteger(R.integer.text_size_short));
+            Privacy_btn.setTextSize(getResources().getInteger(R.integer.text_size_medium));
+            tv_signup.setTextSize(getResources().getInteger(R.integer.text_size));
+            Terms_btn.setTextSize(getResources().getInteger(R.integer.text_size_medium));
+
+        }
     }
 
     private void hideKeyboard() {

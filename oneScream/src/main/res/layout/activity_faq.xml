@@ -47,7 +47,7 @@
                         android:layout_centerInParent="true"
                         android:text="@string/faqs_title"
                         android:textColor="#20262e"
-                        android:textSize="@dimen/faq_title"
+                        android:textSize="@dimen/faq_header"
 
                         />
                 </RelativeLayout>
