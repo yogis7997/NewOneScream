@@ -4,7 +4,7 @@
     api-level="22"
     density="xxhdpi"
     format="7"
-    timestamp="15934567252627" >
+    timestamp="19755148587676" >
 
     <task
         name="javac"
@@ -23,7 +23,7 @@
         location="/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/build/outputs/apk/oneScream-debug.apk"
         type="MAIN" />
 
-    <build timestamp="15934567252627" >
+    <build timestamp="19755148587676" >
         <artifact
             location="/Users/seraphicinfosolutions/Documents/YogiData/Projects/Scream/Anwar/One Scream (Android) 6th May/oneScream/build/outputs/apk/oneScream-debug.apk"
             type="MAIN" />

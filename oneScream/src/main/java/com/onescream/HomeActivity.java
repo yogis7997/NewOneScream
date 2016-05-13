@@ -344,8 +344,8 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         // Detect Status control
         m_ivDetectStatus = (ImageView) findViewById(R.id.iv_detect_status);
         m_ivDetectStatus1 = (ImageView) findViewById(R.id.iv_detect_status1);
-        m_ivDetectStatus1.setVisibility(View.VISIBLE);
-        m_ivDetectStatus.setVisibility(View.VISIBLE);
+//        m_ivDetectStatus1.setVisibility(View.VISIBLE);
+//        m_ivDetectStatus.setVisibility(View.VISIBLE);
         // Detect Button
         m_ivDetectBtn = (ImageView) findViewById(R.id.iv_detect_btn);
         m_ivDetectBtn.setOnClickListener(this);
@@ -689,10 +689,11 @@ public class HomeActivity extends Activity implements View.OnClickListener {
 
             m_ivDetectBtn.setImageResource(R.drawable.ic_pause);
             // m_ivDetectStatus.setVisibility(View.VISIBLE);
-            m_ivDetectStatus.setImageResource(R.drawable.ic_planet);
+//            m_ivDetectStatus.setImageResource(R.drawable.ic_planet);
             m_ivDetectStatus1.setVisibility(View.VISIBLE);
-            m_ivDetectStatus.setVisibility(View.VISIBLE);
+//            m_ivDetectStatus.setVisibility(View.VISIBLE);
             makeSmallPlanet();
+
 
         } else {
 
