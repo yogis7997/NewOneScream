@@ -99,7 +99,7 @@ public class YourDetailsActivity extends Activity implements View.OnClickListene
     public void onBackPressed() {
         Intent intent = new Intent(YourDetailsActivity.this, HomeActivity.class);
         startActivity(intent);
-        overridePendingTransition(R.anim.hold, R.anim.right_out);
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
         finish();
     }
 
@@ -226,9 +226,8 @@ public class YourDetailsActivity extends Activity implements View.OnClickListene
     public void goBack() {
         Intent intent = new Intent(YourDetailsActivity.this, HomeActivity.class);
         startActivity(intent);
-
+        overridePendingTransition(R.anim.left_in, R.anim.right_out);
         finish();
-        overridePendingTransition(R.anim.hold, R.anim.right_out);
 
     }
 

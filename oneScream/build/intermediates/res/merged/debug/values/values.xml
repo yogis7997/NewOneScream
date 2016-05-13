@@ -628,7 +628,7 @@ force for good for others!
     <string name="yourdetails_subtitle4">Your Addresses</string>
     <string name="yourdetails_title">YOUR DETAILS</string>
     <string name="yourdetails_update_info">Update Information</string>
-    <string name="yourdetails_wifi_addresses">Update frequented addresses</string>
+    <string name="yourdetails_wifi_addresses">Update your addresses</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

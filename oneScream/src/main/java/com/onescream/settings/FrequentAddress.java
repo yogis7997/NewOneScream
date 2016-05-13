@@ -579,12 +579,12 @@ public class FrequentAddress extends Activity implements View.OnClickListener {
         if (txt3.isEmpty() && txt2.isEmpty()) {
             frequent_address2.setVisibility(View.GONE);
         } else {
-            frequent_address2.setText(txt2 + "," + txt3);
+            frequent_address2.setText(txt2 + " " + txt3);
         }
         if (txt4.isEmpty() && txt5.isEmpty() && txt6.isEmpty()) {
             frequent_address3.setVisibility(View.GONE);
         } else {
-            frequent_address3.setText(txt4 + ", " + txt5 + ", " + txt6);
+            frequent_address3.setText(txt4 + " " + txt5 + " " + txt6);
         }
     }
 
@@ -641,12 +641,12 @@ public class FrequentAddress extends Activity implements View.OnClickListener {
         if (txt3.isEmpty()) {
             work_address2.setVisibility(View.GONE);
         } else {
-            work_address2.setText(txt2 + "," + txt3);
+            work_address2.setText(txt2 + " " + txt3);
         }
         if (txt4.isEmpty() && txt5.isEmpty() && txt6.isEmpty()) {
             work_address3.setVisibility(View.GONE);
         } else {
-            work_address3.setText(txt4 + ", " + txt5 + ", " + txt6);
+            work_address3.setText(txt4 + " " + txt5 + " " + txt6);
         }
     }
 
@@ -704,12 +704,12 @@ public class FrequentAddress extends Activity implements View.OnClickListener {
         if (txt3.isEmpty() && txt2.isEmpty()) {
             home_address2.setVisibility(View.GONE);
         } else {
-            home_address2.setText(txt2 + "," + txt3);
+            home_address2.setText(txt2 + " " + txt3);
         }
         if (txt4.isEmpty() && txt5.isEmpty() && txt6.isEmpty()) {
             home_address3.setVisibility(View.GONE);
         } else {
-            home_address3.setText(txt4 + ", " + txt5 + ", " + txt6);
+            home_address3.setText(txt4 + " " + txt5 + " " + txt6);
         }
     }
 
